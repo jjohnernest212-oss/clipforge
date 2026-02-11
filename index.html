@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClipForge - Universal Video Downloader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #000000; /* Pure Black */
+        color: #e2e8f0;
+        overflow-x: hidden;
+      }
+
+      body::selection {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Spectrum Animation */
+      @keyframes spectrum-move {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .animate-spectrum {
+        background: linear-gradient(
+          270deg, 
+          #ff0080, /* Pink */
+          #7928ca, /* Purple */
+          #ff0080, 
+          #4f46e5, /* Indigo */
+          #0ea5e9  /* Cyan */
+        );
+        background-size: 400% 400%;
+        animation: spectrum-move 8s ease infinite;
+      }
+      
+      /* Custom Animations */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      @keyframes float-3d {
+        0% { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
+        25% { transform: rotateX(10deg) rotateY(5deg) translateY(-10px); }
+        50% { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
+        75% { transform: rotateX(-10deg) rotateY(-5deg) translateY(10px); }
+        100% { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .animate-float-3d {
+        animation: float-3d 8s ease-in-out infinite;
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000000; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+
+      /* Utility for solid panels */
+      .bg-panel {
+        background-color: #09090b; /* Zinc 950 */
+        border: 1px solid #27272a; /* Zinc 800 */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
